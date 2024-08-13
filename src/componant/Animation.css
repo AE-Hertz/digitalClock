@@ -1,6 +1,8 @@
   .animation-wrapper {
     position: absolute;
     width: 50%;
+    top: 50%;
+  left: 50%;
     padding-bottom: 50%;
     z-index: 1;
     transform: translate(-50%, -50%);
@@ -18,7 +20,7 @@
   .sphere path {
     fill: url(#sphereGradient);
     stroke-width: 1px;
-    stroke: rgba(80,80,80,.35);
+    stroke: rgba(80, 80, 80, 0.35);
     backface-visibility: hidden;
   }
   

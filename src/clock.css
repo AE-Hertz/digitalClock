@@ -9,7 +9,7 @@
 }
 
 .clock {
-  color: white;
+  color: #ffffff;
   font-size: 6rem;
   font-weight: bold;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -18,12 +18,20 @@
   text-shadow: 3px 3px 5px grey;
 }
 .timezone {
-  color: rgb(177, 175, 175);
+  color: rgb(226, 226, 226);
   font-family:Verdana, cursive ;
   font-style:italic;
-  font-size: 1rem;
+  font-size: .8rem;
   text-shadow: 2px 2px 4px rgb(255, 255, 255);
-  position: fixed;
-  margin-top: 18%;
-  margin-left: 94%;
+  position:fixed;
+  right: 0rem;
+
 }
+
+@media screen and (max-width: 420px){
+  .clock{ font-size: 2rem;
+  }
+  .timezone{
+    font-size: .5rem;
+  }
+  }

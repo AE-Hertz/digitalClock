@@ -21,6 +21,17 @@ const Animation = () => {
       window.addEventListener('resize', resize);
     };
 
+    const getRandomColor = () => {
+      const letters = '0123456789abcdef';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      // console.log(color);
+      return color;
+    };
+    
+    
     const sphereAnimation = () => {
       const sphereEl = document.querySelector('.sphere-animation');
       const spherePathEls = sphereEl.querySelectorAll('.sphere path');
@@ -34,7 +45,7 @@ const Animation = () => {
           for (let i = 0; i < pathLength; i++) {
             animations.push(anime({
               targets: spherePathEls[i],
-              stroke: { value: ['rgba(255,75,75,1)', 'rgba(80,80,80,.35)'], duration: 500 },
+              stroke: { value: [getRandomColor(), 'rgba(80,80,80,.35)'], duration: 500 },
               translateX: [2, -4],
               translateY: [2, -4],
               easing: 'easeOutQuad',
@@ -42,6 +53,7 @@ const Animation = () => {
             }));
           }
         },
+        
         update: (ins) => {
           animations.forEach((animation, i) => {
             const percent = (1 - Math.sin((i * .35) + (.0022 * ins.currentTime))) / 2;
